@@ -14,11 +14,11 @@ For this specific use case, the DQN consists of additional convolutional layers 
 - best episode
 <br>
 <video controls autoplay width="200px" height="auto">
-    <source src="videos/rl-video-episode-6.mp4" type="video/mp4" />
+    <source src="videos/rl-video-episode-238.mp4" type="video/mp4" />
 </video>
 
 ## Requirements
-- python environment >3.9.10
+- python environment >= 3.9.10
 - install packages listed in [requirements.txt](./requirements.txt)
 > **note:** sometimes the installation of atari and atari-rom-license failes "no match found" or the packages just will not be installed. Run the following commands again.
 ```bash
