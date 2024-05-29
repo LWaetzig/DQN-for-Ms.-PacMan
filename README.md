@@ -16,6 +16,7 @@ For this specific use case, the DQN consists of additional convolutional layers 
 <video controls autoplay width="200px" height="auto">
     <source src="videos/rl-video-episode-238.mp4" type="video/mp4" />
 </video>
+
 > **note:** Normally the video should be displayed here. If not, you can find the video in the [videos](./videos) directory.
 
 ## Requirements
