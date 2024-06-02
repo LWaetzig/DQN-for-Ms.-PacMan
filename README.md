@@ -24,6 +24,6 @@ For this specific use case, the DQN consists of additional convolutional layers 
 - install packages listed in [requirements.txt](./requirements.txt)
 > **note:** sometimes the installation of atari and atari-rom-license failes "no match found" or the packages just will not be installed. Run the following commands again.
 ```bash
-pip install "gym[atari]"
-pip install "gym[accept-rom-license]"
+pip install "gymnasium[atari]"
+pip install "gymnasium[accept-rom-license]"
 ```
