@@ -3,35 +3,58 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
+from collections import deque
+
+
+def preprocess_frame(frame: np.array) -> np.array:
+    """preprocess frame by applying grayscale, resizing and normalizing
+
+    Args:
+        frame (np.array): frame of the environment
+
+    Returns:
+        np.array: preprocessed frame
+    """
+    # convert to grayscale
+    frame = cv.cvtColor(frame, cv.COLOR_RGB2GRAY)
+    # resize the image
+    frame = cv.resize(frame, (84, 84))
+    # normalize the image
+    frame = frame / 255.0
+    return frame
 
 
 def preprocess_state(
     state: np.array,
-    stack_states: bool = True,
+    frame_stack: deque = deque(),
     stack_size: int = 4,
-    create_tensor: bool = True,
 ) -> torch.tensor:
-    """preprocess the state
+    """preprocessing of state consisting of apply image preprocessing and stacking frames
 
     Args:
         state (np.array): state of the environment
+        frame_stack (deque, optional): stack of frames. Defaults to deque().
+        stack_size (int, optional): number of frames to stack. Defaults to 4.
 
     Returns:
-        np.array: preprocessed state
+        torch.tensor: preprocessed and stacked state
     """
-    # convert to grayscale
-    state = cv.cvtColor(state, cv.COLOR_RGB2GRAY)
-    # resize the image
-    state = cv.resize(state, (84, 84))
-    # normalize the image
-    state = state / 255.0
+    frame = preprocess_frame(state)
+    
+    # fill frame stack with frames
+    if len(frame_stack) == 0:
+        for _ in range(stack_size):
+            frame_stack.append(frame)
+    else:
+        frame_stack.append(frame)
+        if len(frame_stack) > stack_size:
+            frame_stack.popleft()
 
-    if stack_states:
-        state = np.stack([state] * stack_size)
-    if create_tensor:
-        state = torch.FloatTensor(state).unsqueeze(0)
+    state_stack = np.stack(frame_stack)
 
-    return state
+    state_stack = torch.FloatTensor(state_stack).unsqueeze(0)
+
+    return state_stack
 
 
 def create_plots(
@@ -101,7 +124,7 @@ def create_plots(
     axes[2].set_yscale("log")
     axes[2].set_xlabel("Episode")
     axes[2].set_title("Loss per Episode")
-    axes[2].grid()
+    axes[2].grid(True)
     axes[2].legend()
 
     # create plot for epsilon
