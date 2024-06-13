@@ -14,8 +14,11 @@ For this specific use case, the DQN consists of additional convolutional layers 
 
 - more detailed evaluation is provided in the [notebook](./pacman.ipynb) and in [Project Documentation]()
 - best episode
-  <br>
-  https://github.com/LWaetzig/DQN-for-Ms.-PacMan/assets/92372282/2e3d4f55-d293-465a-b546-c854e72349d4
+
+
+https://github.com/LWaetzig/DQN-for-Ms.-PacMan/assets/92372282/c713f2e9-8449-4ea8-bffd-0e5bfb2a71b9
+
+
 
 > **note:** Normally the video should be displayed here. If not, you can find the video in the [videos](./videos) directory.
 
