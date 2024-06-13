@@ -14,7 +14,7 @@ For this specific use case, the DQN consists of additional convolutional layers 
 - best episode
 <br>
 <video controls autoplay width="200px" height="auto">
-    <source src="videos/best-episode.mp4" type="video/mp4" />
+    <source src="videos\rl-video-episode-7.mp4" type="video/mp4" />
 </video>
 
 > **note:** Normally the video should be displayed here. If not, you can find the video in the [videos](./videos) directory.
