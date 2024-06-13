@@ -15,11 +15,12 @@ For this specific use case, the DQN consists of additional convolutional layers 
 - more detailed evaluation is provided in the [notebook](./pacman.ipynb) and in [Project Documentation]()
 - best episode
   <br>
-  <video controls autoplay width="200px" height="auto">
-  <source src="./videos/rl-video-episode-7.mp4" type="video/mp4" />
-  </video>
+  https://github.com/LWaetzig/DQN-for-Ms.-PacMan/assets/92372282/2e3d4f55-d293-465a-b546-c854e72349d4
 
 > **note:** Normally the video should be displayed here. If not, you can find the video in the [videos](./videos) directory.
+
+
+
 
 ## Requirements
 
