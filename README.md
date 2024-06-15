@@ -12,7 +12,7 @@ For this specific use case, the DQN consists of additional convolutional layers 
 
 ### Results
 
-- more detailed evaluation is provided in the [notebook](./pacman.ipynb) and in [Project Documentation]()
+- more detailed evaluation is provided in the [notebook](./pacman.ipynb)
 - best episode
 
 
